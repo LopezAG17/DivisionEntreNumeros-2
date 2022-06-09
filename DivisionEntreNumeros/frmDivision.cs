@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-// using System.ComponentModel;
-// using System.Data;
-// using System.Drawing;
-// using System.Linq;
-// using System.Text;
-// using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DivisionEntreNumeros
@@ -15,7 +9,8 @@ namespace DivisionEntreNumeros
     int nSeleccion;
     float resultado;  // declaro variable para poder usar en cualquier lugar
 
-
+    float mV1;
+    float mV2;
     public frmDivision()
     {
       InitializeComponent();
@@ -84,8 +79,7 @@ namespace DivisionEntreNumeros
 
       // --------------------------------------------------------------------------
 
-      float mV1 = float.Parse(txtV01.Text);
-      float mV2 = float.Parse(txtV02.Text);
+
 
       // el switch trabaja parecido al comando IF
       switch (nSeleccion)
