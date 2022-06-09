@@ -15,8 +15,6 @@ namespace DivisionEntreNumeros
     int nSeleccion;
     float resultado;  // declaro variable para poder usar en cualquier lugar
 
-    float mV1;
-    float mV2;
 
     public frmDivision()
     {
@@ -48,7 +46,7 @@ namespace DivisionEntreNumeros
       rbtnSumar.Checked = true;
     }
 
-    private void frmDivision_KeyPrees(object sender, KeyEventArgs e)
+    private void frmDivision_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Escape) //verificar la tecla escape
       {
@@ -70,22 +68,30 @@ namespace DivisionEntreNumeros
     {
       Item seleccion = cboSeleccion.SelectedItem as Item;
       if (seleccion == null) return;  // si seleccion es nulo saldra del comboBox
-
       // --------------------------------------------------------------------------
       // coloca aqui las 3 lineas de código que faltan
       // --------------------------------------------------------------------------
-
-
+      nSeleccion = cboSeleccion.SelectedIndex;
+      if (nSeleccion == 0)
+      {
+        rbtnDividir.Enabled = false;
+        rbtnMultiplica.Enabled = false;
+        rbtnPorciento.Enabled = false;
+        rbtnSumar.Enabled = false;
+        rbtnSumar.Checked = false;
+      }
 
 
       // --------------------------------------------------------------------------
 
+      float mV1 = float.Parse(txtV01.Text);
+      float mV2 = float.Parse(txtV02.Text);
 
       // el switch trabaja parecido al comando IF
       switch (nSeleccion)
       {
         case 0:
-          break; // sale del switch
+          break; //! sale del switch
         case 1:
           resultado = mV1 + mV2;
           lblResultado.Text = Convert.ToString(resultado);
@@ -144,7 +150,7 @@ namespace DivisionEntreNumeros
         float v02 = float.Parse(txtV02.Text); // convierte a resultado a float ( float es parecido a double / decimal )
 
         // ----------------------------------------------------------
-        // coloca aqui la operación de División según el radio button
+        //! coloca aqui la operación de División según el radio button
         // ----------------------------------------------------------
         if (rbtnDividir.Checked == true)
         {
@@ -152,7 +158,7 @@ namespace DivisionEntreNumeros
         }
 
         // -------------------------------------------------------------
-        // coloca aqui la operación de Multiplicar según el radio button
+        //!coloca aqui la operación de Multiplicar según el radio button
         // -------------------------------------------------------------
         if (rbtnMultiplica.Checked == true)
         {
@@ -161,7 +167,7 @@ namespace DivisionEntreNumeros
 
 
         // ---------------------------------------------------------
-        // coloca aqui la operación sumar según el radio button
+        //! coloca aqui la operación sumar según el radio button
         // ---------------------------------------------------------
         if (rbtnSumar.Checked == true)
         {
@@ -170,7 +176,7 @@ namespace DivisionEntreNumeros
 
 
         // ---------------------------------------------------------
-        // coloca aqui la operación Porciento según el radio button
+        //! coloca aqui la operación Porciento según el radio button
         // ---------------------------------------------------------
         if (rbtnPorciento.Checked == true)
         {
@@ -243,7 +249,6 @@ namespace DivisionEntreNumeros
 
 
     }
-
 
 
   }
