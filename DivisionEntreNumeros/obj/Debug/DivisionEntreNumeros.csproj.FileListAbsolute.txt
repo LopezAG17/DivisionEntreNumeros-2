@@ -1,0 +1,19 @@
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.exe.config
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csprojResolveAssemblyReference.cache
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.frmDivision.resources
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Properties.Resources.resources
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.GenerateResource.Cache
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.exe
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.pdb
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.exe
+C:\Users\racosta\Downloads\ITLA Manuales Prrogramacion\ITLA Ejemplos\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.pdb
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.exe.config
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.exe
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.pdb
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.exe
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.pdb
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csprojResolveAssemblyReference.cache
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.frmDivision.resources
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Properties.Resources.resources
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.GenerateResource.Cache
+C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Form1.resources
