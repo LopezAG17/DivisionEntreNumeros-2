@@ -239,6 +239,7 @@ namespace DivisionEntreNumeros
       // según el radiobutton
       label1.Text = "Valor a sumar";
       label2.Text = "Valor a sumar";
+      // !HOlas
 
     }
 
