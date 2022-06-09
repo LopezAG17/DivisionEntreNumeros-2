@@ -17,3 +17,15 @@ C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj
 C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Properties.Resources.resources
 C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.GenerateResource.Cache
 C:\ITLA Prrogramacion I\Ejercicios\DivisionEntreNumeros\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Form1.resources
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.exe.config
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.exe
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\bin\Debug\DivisionEntreNumeros.pdb
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.AssemblyReference.cache
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.SuggestedBindingRedirects.cache
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Form1.resources
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.frmDivision.resources
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.Properties.Resources.resources
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.GenerateResource.cache
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.csproj.CoreCompileInputs.cache
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.exe
+D:\Universidad\ProgramacionSRC\Lenguajes\C\C#\DivisionEntreNumeros-2\DivisionEntreNumeros\obj\Debug\DivisionEntreNumeros.pdb

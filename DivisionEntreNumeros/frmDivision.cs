@@ -28,8 +28,7 @@ namespace DivisionEntreNumeros
     {
       this.KeyPreview = true;  // activa el teclado de comandos en el formulario
       this.Text = HMenu.cia + "   Aritméticas    " + HMenu.pc;   // le coloca titulo al formulario
-      float mV1 = float.Parse(txtV01.Text);
-      float mV2 = float.Parse(txtV02.Text);
+
 
       label1.Text = "Dividendo";
       label2.Text = "Divisor";
@@ -83,7 +82,7 @@ namespace DivisionEntreNumeros
 
 
       // el switch trabaja parecido al comando IF
-      switch (nSelecciom)
+      switch (nSeleccion)
       {
         case 0:
           break; // sale del switch
