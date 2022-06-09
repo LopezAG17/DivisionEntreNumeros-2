@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// using System.ComponentModel;
+// using System.Data;
+// using System.Drawing;
+// using System.Linq;
+// using System.Text;
+// using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DivisionEntreNumeros
@@ -240,6 +240,7 @@ namespace DivisionEntreNumeros
       label1.Text = "Valor a sumar";
       label2.Text = "Valor a sumar";
       // !HOlas
+
 
     }
 
