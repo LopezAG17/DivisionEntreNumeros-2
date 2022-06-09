@@ -237,7 +237,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Division de Números";
             this.Load += new System.EventHandler(this.frmDivision_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDivision_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

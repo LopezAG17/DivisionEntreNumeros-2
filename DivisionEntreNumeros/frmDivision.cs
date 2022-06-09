@@ -12,11 +12,11 @@ namespace DivisionEntreNumeros
 {
   public partial class frmDivision : Form
   {
-    int nSelecciom;
+    int nSeleccion;
     float resultado;  // declaro variable para poder usar en cualquier lugar
 
-    float mV1 = float.Parse(txtV01.Text);
-    float mV2 = float.Parse(txtV02.Text);
+    float mV1;
+    float mV2;
 
     public frmDivision()
     {
@@ -28,6 +28,8 @@ namespace DivisionEntreNumeros
     {
       this.KeyPreview = true;  // activa el teclado de comandos en el formulario
       this.Text = HMenu.cia + "   Aritméticas    " + HMenu.pc;   // le coloca titulo al formulario
+      float mV1 = float.Parse(txtV01.Text);
+      float mV2 = float.Parse(txtV02.Text);
 
       label1.Text = "Dividendo";
       label2.Text = "Divisor";
@@ -47,10 +49,12 @@ namespace DivisionEntreNumeros
       rbtnSumar.Checked = true;
     }
 
-    private void frmDivision_KeyDown(object sender, KeyEventArgs e)
+    private void frmDivision_KeyPrees(object sender, KeyEventArgs e)
     {
-      if (e.KeyCode == Keys.Escape) // verifica si presionaste la tecla escape
-      { this.Close(); }
+      if (e.KeyCode == Keys.Escape) //verificar la tecla escape
+      {
+        this.Close();
+      }
     }
 
     // ------------------------------------------------------------------------
