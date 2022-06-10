@@ -97,13 +97,10 @@ namespace DivisionEntreNumeros
     }
     private void btnLimpiar_Click(object sender, EventArgs e)
     {
-      txtV01.Clear();  // Clear --> Limpiar el textbox dividendo
-      txtV02.Clear();    // Clear --> Limpiar el textbox divisor
-      lblResultado.Text = ""; // limpiar este label
-      rbtnSumar.Checked = true; // se vera marcado el radio button
-      lblResultado.Text = ""; // limpiar este label
-      txtV01.Focus();  // Focus --> El puntero del mouse se coloca en este textbox
+      Limpiar();
     }
+
+
     private void button1_Click(object sender, EventArgs e)
     {
       this.Close();   // cierra la aplicación
@@ -147,7 +144,6 @@ namespace DivisionEntreNumeros
         rbtnPorciento.Enabled = true;
         rbtnSumar.Enabled = true;
         rbtnSumar.Checked = true;
-
       }
       else
       {
@@ -162,61 +158,57 @@ namespace DivisionEntreNumeros
         cboSeleccion.Enabled = true;
       }
     }
+    // !Logica y funcionalidades del programa
     private void ManejoCombobox()
     {
       Item seleccion = cboSeleccion.SelectedItem as Item;
       if (seleccion == null) return;
-      // si seleccion es nulo saldra del comboBox
-      // --------------------------------------------------------------------------
-      // coloca aqui las 3 lineas de código que faltan
-      // --------------------------------------------------------------------------
       nSeleccion = Convert.ToInt32(seleccion.Value);
       try
       {
         float mV1 = float.Parse(txtV01.Text);
         float mV2 = float.Parse(txtV02.Text);
+
+
+        switch (nSeleccion)
+        {
+          case 0:
+            resultado = 0;
+            lblResultado.Text = Convert.ToString(resultado);
+            break; //! sale del switch
+          case 1:
+            resultado = mV1 + mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 2:
+            resultado = mV1 + mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 3:
+            resultado = mV1 * mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 4:
+            resultado = mV1 / mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 5:
+            resultado = (mV1 * mV2) / 100;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+        }
       }
       catch (Exception)
       {
-        // 
-      }
-      // --------------------------------------------------------------------------
-      // el switch trabaja parecido al comando IF
-      switch (nSeleccion)
-      {
-        case 0:
-          resultado = 0;
-          lblResultado.Text = Convert.ToString(resultado);
-          break; //! sale del switch
-        case 1:
-          resultado = mV1 + mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 2:
-          resultado = mV1 + mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 3:
-          resultado = mV1 * mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 4:
-          resultado = mV1 / mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 5:
-          resultado = (mV1 * mV2) / 100;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
+        // MessageBox.Show("Tengo Un Error : " + error.Message);  // de haber error aparece una caja de mensajes
       }
     }
     private void ManejoRButtoms()
     {
       try  // el comando try --> tratará de realizar la acción solicitada (esto es una trampa de errores)
       {
-        float v01 = float.Parse(txtV01.Text); // convierte a resultado a float ( float es parecido a double / decimal )
-        float v02 = float.Parse(txtV02.Text); // convierte a resultado a float ( float es parecido a double / decimal )
-        // ----------------------------------------------------------
+        float v01 = float.Parse(txtV01.Text);
+        float v02 = float.Parse(txtV02.Text);
         //! coloca aqui la operación de División según el radio button
         // ----------------------------------------------------------
         if (rbtnDividir.Checked == true)
@@ -254,5 +246,15 @@ namespace DivisionEntreNumeros
         MessageBox.Show("Tengo Un Error : " + error.Message);  // de haber error aparece una caja de mensajes
       }
     }
+    private void Limpiar()
+    {
+      txtV01.Clear();  // Clear --> Limpiar el textbox dividendo
+      txtV02.Clear();    // Clear --> Limpiar el textbox divisor
+      lblResultado.Text = ""; // limpiar este label
+      rbtnSumar.Checked = true; // se vera marcado el radio button
+      lblResultado.Text = ""; // limpiar este label
+      txtV01.Focus();  // Focus --> El puntero del mouse se coloca en este textbox
+    }
+
   }
 }
