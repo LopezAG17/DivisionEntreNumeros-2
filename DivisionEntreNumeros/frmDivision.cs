@@ -116,22 +116,22 @@ namespace DivisionEntreNumeros
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
       // según el radiobutton
-      label1.Text = "Cantidad";
-      label2.Text = "Multiplicar Por";
+      label1.Text = "Multiplicando";
+      label2.Text = "Multiplicador ";
     }
     private void rbtnPorciento_CheckedChanged(object sender, EventArgs e)
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
       // según el radiobutton
       label1.Text = "Cantidad";
-      label2.Text = "el porcentaje es";
+      label2.Text = "porcentaje";
     }
     private void rbtnSumar_CheckedChanged(object sender, EventArgs e)
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
       // según el radiobutton
-      label1.Text = "Valor a sumar";
-      label2.Text = "Valor a sumar";
+      label1.Text = "Sumando (a)";
+      label2.Text = "Sumando (b)";
     }
 
     private void ckbControl_CheckedChanged(object sender, EventArgs e)
