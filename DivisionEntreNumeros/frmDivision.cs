@@ -10,18 +10,14 @@ namespace DivisionEntreNumeros
     float resultado;  // declaro variable para poder usar en cualquier lugar
     float mV1;
     float mV2;
-
     public frmDivision()
     {
       InitializeComponent();
     }
-
-
     private void frmDivision_Load(object sender, EventArgs e)
     {
       this.KeyPreview = true;  // activa el teclado de comandos en el formulario
       this.Text = HMenu.cia + "   Aritméticas    " + HMenu.pc;   // le coloca titulo al formulario
-
 
       label1.Text = "Dividendo";
       label2.Text = "Divisor";
@@ -37,11 +33,9 @@ namespace DivisionEntreNumeros
       cboSeleccion.DisplayMember = "Name";
       cboSeleccion.ValueMember = "Value";
       cboSeleccion.DataSource = lista;
-
       ckbControl.Checked = true;
       rbtnSumar.Checked = true;
     }
-
     private void frmDivision_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode == Keys.Escape) //verificar la tecla escape
@@ -49,7 +43,6 @@ namespace DivisionEntreNumeros
         this.Close();
       }
     }
-
     // ------------------------------------------------------------------------
     // investigar porque no se esta ejecutando el codigo aqui
     // ------------------------------------------------------------------------
@@ -59,59 +52,11 @@ namespace DivisionEntreNumeros
     //
     // el lblResultado.Text siempre sera valor cero, por que mV1 y mV2 no tienen valores llegan vacio
     // que deben hacer ???
-
     private void cboSeleccion_SelectedIndexChanged(object sender, EventArgs e)
     {
-      try//Entre todo dentro de estte try porque me daba una exceptionEn la linea #74 y $75
-      {
-        Item seleccion = cboSeleccion.SelectedItem as Item;
-        if (seleccion == null) return;
-        // si seleccion es nulo saldra del comboBox
-        // --------------------------------------------------------------------------
-        // coloca aqui las 3 lineas de código que faltan
-        // --------------------------------------------------------------------------
-        nSeleccion = Convert.ToInt32(seleccion.Value);
-        float mV1 = float.Parse(txtV01.Text);
-        float mV2 = float.Parse(txtV02.Text);
-
-        // --------------------------------------------------------------------------
-        // el switch trabaja parecido al comando IF
-        switch (nSeleccion)
-        {
-          case 0:
-            resultado = 0;
-            lblResultado.Text = Convert.ToString(resultado);
-            break; //! sale del switch
-          case 1:
-            resultado = mV1 + mV2;
-            lblResultado.Text = Convert.ToString(resultado);
-            break;
-          case 2:
-            resultado = mV1 + mV2;
-            lblResultado.Text = Convert.ToString(resultado);
-            break;
-          case 3:
-            resultado = mV1 * mV2;
-            lblResultado.Text = Convert.ToString(resultado);
-            break;
-          case 4:
-            resultado = mV1 / mV2;
-            lblResultado.Text = Convert.ToString(resultado);
-            break;
-          case 5:
-            resultado = (mV1 * mV2) / 100;
-            lblResultado.Text = Convert.ToString(resultado);
-            break;
-        }
-
-      }
-      catch (Exception)
-      {
-        MessageBox.Show("Error en el código, esta exception es debido a que el progrmana no sabe que elemento ejecutar  primero, de igual Forma se ejecutara de manera normal", "Error 001", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }
+      ManejoCombobox();
     }
     // ------------------------------------------------------------------------
-
     private void txtV01_KeyPress(object sender, KeyPressEventArgs e)
     {
       if ((int)e.KeyChar == (int)Keys.Enter)  // verifica si presionaste la tecla enter
@@ -129,7 +74,6 @@ namespace DivisionEntreNumeros
       }
       KeyPreview = true;
     }
-
     private void txtV02_KeyPress(object sender, KeyPressEventArgs e)
     {
       if ((int)e.KeyChar == (int)Keys.Enter)  // verifica si presionaste la tecla enter
@@ -147,82 +91,23 @@ namespace DivisionEntreNumeros
       }
       KeyPreview = true;
     }
-
-
     private void btnCalcular_Click(object sender, EventArgs e)
     {
-      try  // el comando try --> tratará de realizar la acción solicitada (esto es una trampa de errores)
-      {
-
-        float v01 = float.Parse(txtV01.Text); // convierte a resultado a float ( float es parecido a double / decimal )
-        float v02 = float.Parse(txtV02.Text); // convierte a resultado a float ( float es parecido a double / decimal )
-
-        // ----------------------------------------------------------
-        //! coloca aqui la operación de División según el radio button
-        // ----------------------------------------------------------
-        if (rbtnDividir.Checked == true)
-        {
-          resultado = v01 / v02;   // realiza la operación de dividir
-        }
-
-        // -------------------------------------------------------------
-        //!coloca aqui la operación de Multiplicar según el radio button
-        // -------------------------------------------------------------
-        if (rbtnMultiplica.Checked == true)
-        {
-          resultado = v01 * v02;   // realiza la operación de dividir
-        }
-
-
-        // ---------------------------------------------------------
-        //! coloca aqui la operación sumar según el radio button
-        // ---------------------------------------------------------
-        if (rbtnSumar.Checked == true)
-        {
-          resultado = v01 + v02;   // realiza la operación de dividir
-        }
-
-
-        // ---------------------------------------------------------
-        //! coloca aqui la operación Porciento según el radio button
-        // ---------------------------------------------------------
-        if (rbtnPorciento.Checked == true)
-        {
-          resultado = (v01 * v02) / 100;   // realiza la operación de dividir
-        }
-
-
-
-        // ---------------------------------------------------------
-        // !asigna el Resultado
-        // ---------------------------------------------------------
-        lblResultado.Text = Convert.ToString(resultado); // convierte a resultado a string
-      }
-      catch (Exception error)  // de haber algún error es atrapado por el comando --> catch
-      {
-        MessageBox.Show("Tengo Un Error : " + error.Message);  // de haber error aparece una caja de mensajes
-      }
+      ManejoRButtoms();
     }
-
-
     private void btnLimpiar_Click(object sender, EventArgs e)
     {
       txtV01.Clear();  // Clear --> Limpiar el textbox dividendo
       txtV02.Clear();    // Clear --> Limpiar el textbox divisor
       lblResultado.Text = ""; // limpiar este label
-
       rbtnSumar.Checked = true; // se vera marcado el radio button
-
       lblResultado.Text = ""; // limpiar este label
-
       txtV01.Focus();  // Focus --> El puntero del mouse se coloca en este textbox
     }
-
     private void button1_Click(object sender, EventArgs e)
     {
       this.Close();   // cierra la aplicación
     }
-
     private void rbtnDividir_CheckedChanged(object sender, EventArgs e)
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
@@ -230,7 +115,6 @@ namespace DivisionEntreNumeros
       label1.Text = "Dividendo";
       label2.Text = "Divisor";
     }
-
     private void rbtnMultiplica_CheckedChanged(object sender, EventArgs e)
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
@@ -238,7 +122,6 @@ namespace DivisionEntreNumeros
       label1.Text = "Cantidad";
       label2.Text = "Multiplicar Por";
     }
-
     private void rbtnPorciento_CheckedChanged(object sender, EventArgs e)
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
@@ -246,7 +129,6 @@ namespace DivisionEntreNumeros
       label1.Text = "Cantidad";
       label2.Text = "el porcentaje es";
     }
-
     private void rbtnSumar_CheckedChanged(object sender, EventArgs e)
     {
       // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
@@ -254,8 +136,6 @@ namespace DivisionEntreNumeros
       label1.Text = "Valor a sumar";
       label2.Text = "Valor a sumar";
       // !HOlas
-
-
     }
 
     private void ckbControl_CheckedChanged(object sender, EventArgs e)
@@ -281,6 +161,98 @@ namespace DivisionEntreNumeros
         rbtnPorciento.Enabled = false;
         rbtnSumar.Enabled = false;
         cboSeleccion.Enabled = true;
+      }
+    }
+    private void ManejoCombobox()
+    {
+      Item seleccion = cboSeleccion.SelectedItem as Item;
+      if (seleccion == null) return;
+      // si seleccion es nulo saldra del comboBox
+      // --------------------------------------------------------------------------
+      // coloca aqui las 3 lineas de código que faltan
+      // --------------------------------------------------------------------------
+      nSeleccion = Convert.ToInt32(seleccion.Value);
+      try
+      {
+        float mV1 = float.Parse(txtV01.Text);
+        float mV2 = float.Parse(txtV02.Text);
+      }
+      catch (Exception)
+      {
+        // 
+      }
+      // --------------------------------------------------------------------------
+      // el switch trabaja parecido al comando IF
+      switch (nSeleccion)
+      {
+        case 0:
+          resultado = 0;
+          lblResultado.Text = Convert.ToString(resultado);
+          break; //! sale del switch
+        case 1:
+          resultado = mV1 + mV2;
+          lblResultado.Text = Convert.ToString(resultado);
+          break;
+        case 2:
+          resultado = mV1 + mV2;
+          lblResultado.Text = Convert.ToString(resultado);
+          break;
+        case 3:
+          resultado = mV1 * mV2;
+          lblResultado.Text = Convert.ToString(resultado);
+          break;
+        case 4:
+          resultado = mV1 / mV2;
+          lblResultado.Text = Convert.ToString(resultado);
+          break;
+        case 5:
+          resultado = (mV1 * mV2) / 100;
+          lblResultado.Text = Convert.ToString(resultado);
+          break;
+      }
+    }
+    private void ManejoRButtoms()
+    {
+      try  // el comando try --> tratará de realizar la acción solicitada (esto es una trampa de errores)
+      {
+        float v01 = float.Parse(txtV01.Text); // convierte a resultado a float ( float es parecido a double / decimal )
+        float v02 = float.Parse(txtV02.Text); // convierte a resultado a float ( float es parecido a double / decimal )
+        // ----------------------------------------------------------
+        //! coloca aqui la operación de División según el radio button
+        // ----------------------------------------------------------
+        if (rbtnDividir.Checked == true)
+        {
+          resultado = v01 / v02;   // realiza la operación de dividir
+        }
+        // -------------------------------------------------------------
+        //!coloca aqui la operación de Multiplicar según el radio button
+        // -------------------------------------------------------------
+        if (rbtnMultiplica.Checked == true)
+        {
+          resultado = v01 * v02;   // realiza la operación de dividir
+        }
+        // ---------------------------------------------------------
+        //! coloca aqui la operación sumar según el radio button
+        // ---------------------------------------------------------
+        if (rbtnSumar.Checked == true)
+        {
+          resultado = v01 + v02;   // realiza la operación de dividir
+        }
+        // ---------------------------------------------------------
+        //! coloca aqui la operación Porciento según el radio button
+        // ---------------------------------------------------------
+        if (rbtnPorciento.Checked == true)
+        {
+          resultado = (v01 * v02) / 100;   // realiza la operación de dividir
+        }
+        // ---------------------------------------------------------
+        // !asigna el Resultado
+        // ---------------------------------------------------------
+        lblResultado.Text = Convert.ToString(resultado); // convierte a resultado a string
+      }
+      catch (Exception error)  // de haber algún error es atrapado por el comando --> catch
+      {
+        MessageBox.Show("Tengo Un Error : " + error.Message);  // de haber error aparece una caja de mensajes
       }
     }
   }
