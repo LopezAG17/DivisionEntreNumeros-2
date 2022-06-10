@@ -8,9 +8,9 @@ namespace DivisionEntreNumeros
   {
     int nSeleccion;
     float resultado;  // declaro variable para poder usar en cualquier lugar
-
     float mV1;
     float mV2;
+
     public frmDivision()
     {
       InitializeComponent();
@@ -38,6 +38,7 @@ namespace DivisionEntreNumeros
       cboSeleccion.ValueMember = "Value";
       cboSeleccion.DataSource = lista;
 
+      ckbControl.Checked = true;
       rbtnSumar.Checked = true;
     }
 
@@ -61,51 +62,52 @@ namespace DivisionEntreNumeros
 
     private void cboSeleccion_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Item seleccion = cboSeleccion.SelectedItem as Item;
-      if (seleccion == null) return;  // si seleccion es nulo saldra del comboBox
-      // --------------------------------------------------------------------------
-      // coloca aqui las 3 lineas de código que faltan
-      // --------------------------------------------------------------------------
-      nSeleccion = cboSeleccion.SelectedIndex;
-      if (nSeleccion == 0)
+      try//Entre todo dentro de estte try porque me daba una exceptionEn la linea #74 y $75
       {
-        rbtnDividir.Enabled = false;
-        rbtnMultiplica.Enabled = false;
-        rbtnPorciento.Enabled = false;
-        rbtnSumar.Enabled = false;
-        rbtnSumar.Checked = false;
+        Item seleccion = cboSeleccion.SelectedItem as Item;
+        if (seleccion == null) return;
+        // si seleccion es nulo saldra del comboBox
+        // --------------------------------------------------------------------------
+        // coloca aqui las 3 lineas de código que faltan
+        // --------------------------------------------------------------------------
+        nSeleccion = Convert.ToInt32(seleccion.Value);
+        float mV1 = float.Parse(txtV01.Text);
+        float mV2 = float.Parse(txtV02.Text);
+
+        // --------------------------------------------------------------------------
+        // el switch trabaja parecido al comando IF
+        switch (nSeleccion)
+        {
+          case 0:
+            resultado = 0;
+            lblResultado.Text = Convert.ToString(resultado);
+            break; //! sale del switch
+          case 1:
+            resultado = mV1 + mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 2:
+            resultado = mV1 + mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 3:
+            resultado = mV1 * mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 4:
+            resultado = mV1 / mV2;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+          case 5:
+            resultado = (mV1 * mV2) / 100;
+            lblResultado.Text = Convert.ToString(resultado);
+            break;
+        }
+
       }
-
-
-      // --------------------------------------------------------------------------
-
-
-
-      // el switch trabaja parecido al comando IF
-      switch (nSeleccion)
+      catch (Exception)
       {
-        case 0:
-          break; //! sale del switch
-        case 1:
-          resultado = mV1 + mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 2:
-          resultado = mV1 + mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 3:
-          resultado = mV1 * mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 4:
-          resultado = mV1 / mV2;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
-        case 5:
-          resultado = (mV1 * mV2) / 100;
-          lblResultado.Text = Convert.ToString(resultado);
-          break;
+        MessageBox.Show("Error en el código, esta exception es debido a que el progrmana no sabe que elemento ejecutar  primero, de igual Forma se ejecutara de manera normal", "Error 001", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
     // ------------------------------------------------------------------------
@@ -120,6 +122,12 @@ namespace DivisionEntreNumeros
           txtV02.Focus(); // coloca el focus o cursor en el siguiente textbox
         }
       }
+      if (Char.IsLetter(e.KeyChar)) // Solo permitir numeros en el texto            
+      {
+        e.Handled = true;
+        MessageBox.Show("Solo numeros");
+      }
+      KeyPreview = true;
     }
 
     private void txtV02_KeyPress(object sender, KeyPressEventArgs e)
@@ -132,6 +140,12 @@ namespace DivisionEntreNumeros
           btnCalcular.PerformClick(); // performClick se dirige hacia el evento click del boton y ejecuta el codigo
         }
       }
+      if (Char.IsLetter(e.KeyChar)) // Solo permitir numeros en el texto            
+      {
+        e.Handled = true;
+        MessageBox.Show("Solo numeros");
+      }
+      KeyPreview = true;
     }
 
 
@@ -180,7 +194,7 @@ namespace DivisionEntreNumeros
 
 
         // ---------------------------------------------------------
-        // asigna el Resultado
+        // !asigna el Resultado
         // ---------------------------------------------------------
         lblResultado.Text = Convert.ToString(resultado); // convierte a resultado a string
       }
@@ -244,6 +258,30 @@ namespace DivisionEntreNumeros
 
     }
 
+    private void ckbControl_CheckedChanged(object sender, EventArgs e)
+    {
+      if (ckbControl.Checked == true)
+      {
+        cboSeleccion.Enabled = false;
+        rbtnDividir.Enabled = true;
+        rbtnMultiplica.Enabled = true;
+        rbtnPorciento.Enabled = true;
+        rbtnSumar.Enabled = true;
+        rbtnSumar.Checked = true;
 
+      }
+      else
+      {
+        rbtnDividir.Checked = false;
+        rbtnMultiplica.Checked = false;
+        rbtnPorciento.Checked = false;
+        rbtnSumar.Checked = false;
+        rbtnDividir.Enabled = false;
+        rbtnMultiplica.Enabled = false;
+        rbtnPorciento.Enabled = false;
+        rbtnSumar.Enabled = false;
+        cboSeleccion.Enabled = true;
+      }
+    }
   }
 }

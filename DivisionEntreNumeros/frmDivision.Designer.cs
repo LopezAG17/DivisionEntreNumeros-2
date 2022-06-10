@@ -44,6 +44,7 @@
             this.rbtnSumar = new System.Windows.Forms.RadioButton();
             this.cboSeleccion = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.ckbControl = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +69,7 @@
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 174);
+            this.label3.Location = new System.Drawing.Point(13, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 39);
             this.label3.TabIndex = 2;
@@ -126,7 +127,7 @@
             // 
             this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(216, 174);
+            this.lblResultado.Location = new System.Drawing.Point(216, 187);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(130, 39);
             this.lblResultado.TabIndex = 6;
@@ -195,7 +196,7 @@
             // cboSeleccion
             // 
             this.cboSeleccion.FormattingEnabled = true;
-            this.cboSeleccion.Location = new System.Drawing.Point(215, 134);
+            this.cboSeleccion.Location = new System.Drawing.Point(215, 153);
             this.cboSeleccion.Name = "cboSeleccion";
             this.cboSeleccion.Size = new System.Drawing.Size(130, 21);
             this.cboSeleccion.TabIndex = 12;
@@ -204,17 +205,29 @@
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(12, 134);
+            this.label5.Location = new System.Drawing.Point(12, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(197, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = " Operación Aritmética a Realizar";
+            // 
+            // ckbControl
+            // 
+            this.ckbControl.AutoSize = true;
+            this.ckbControl.Location = new System.Drawing.Point(88, 131);
+            this.ckbControl.Name = "ckbControl";
+            this.ckbControl.Size = new System.Drawing.Size(138, 17);
+            this.ckbControl.TabIndex = 14;
+            this.ckbControl.Text = "Desabilitar Operaciones";
+            this.ckbControl.UseVisualStyleBackColor = true;
+            this.ckbControl.CheckedChanged += new System.EventHandler(this.ckbControl_CheckedChanged);
             // 
             // frmDivision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 304);
+            this.Controls.Add(this.ckbControl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cboSeleccion);
             this.Controls.Add(this.rbtnSumar);
@@ -259,6 +272,7 @@
     private System.Windows.Forms.RadioButton rbtnSumar;
     private System.Windows.Forms.ComboBox cboSeleccion;
     private System.Windows.Forms.Label label5;
-  }
+        private System.Windows.Forms.CheckBox ckbControl;
+    }
 }
 
