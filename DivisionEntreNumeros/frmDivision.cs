@@ -33,8 +33,9 @@ namespace DivisionEntreNumeros
       cboSeleccion.DisplayMember = "Name";
       cboSeleccion.ValueMember = "Value";
       cboSeleccion.DataSource = lista;
-      ckbControl.Checked = true;
+      ckbControl.Checked = false;
       rbtnSumar.Checked = true;
+      cboSeleccion.Enabled = false;
     }
     private void frmDivision_KeyDown(object sender, KeyEventArgs e)
     {
@@ -43,15 +44,6 @@ namespace DivisionEntreNumeros
         this.Close();
       }
     }
-    // ------------------------------------------------------------------------
-    // investigar porque no se esta ejecutando el codigo aqui
-    // ------------------------------------------------------------------------
-    //
-    // el codigo esta bien
-    // el switch no funciona por que hay que asignarle el valor a nSelecciom
-    //
-    // el lblResultado.Text siempre sera valor cero, por que mV1 y mV2 no tienen valores llegan vacio
-    // que deben hacer ???
     private void cboSeleccion_SelectedIndexChanged(object sender, EventArgs e)
     {
       ManejoCombobox();
@@ -90,22 +82,16 @@ namespace DivisionEntreNumeros
     }
     private void rbtnMultiplica_CheckedChanged(object sender, EventArgs e)
     {
-      // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
-      // según el radiobutton
       label1.Text = "Multiplicando";
       label2.Text = "Multiplicador ";
     }
     private void rbtnPorciento_CheckedChanged(object sender, EventArgs e)
     {
-      // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
-      // según el radiobutton
       label1.Text = "Cantidad";
       label2.Text = "porcentaje";
     }
     private void rbtnSumar_CheckedChanged(object sender, EventArgs e)
     {
-      // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
-      // según el radiobutton
       label1.Text = "Sumando (a)";
       label2.Text = "Sumando (b)";
     }
@@ -113,16 +99,6 @@ namespace DivisionEntreNumeros
     private void ckbControl_CheckedChanged(object sender, EventArgs e)
     {
       if (ckbControl.Checked == true)
-      {
-        cboSeleccion.Enabled = false;
-        rbtnDividir.Enabled = true;
-        rbtnMultiplica.Enabled = true;
-        rbtnPorciento.Enabled = true;
-        rbtnSumar.Enabled = true;
-        rbtnSumar.Checked = true;
-        btnCalcular.Enabled = false;
-      }
-      else
       {
         rbtnDividir.Checked = false;
         rbtnMultiplica.Checked = false;
@@ -133,6 +109,18 @@ namespace DivisionEntreNumeros
         rbtnPorciento.Enabled = false;
         rbtnSumar.Enabled = false;
         cboSeleccion.Enabled = true;
+        btnCalcular.Enabled = false;
+      }
+      else
+      {
+        cboSeleccion.Enabled = false;
+        rbtnDividir.Enabled = true;
+        rbtnMultiplica.Enabled = true;
+        rbtnPorciento.Enabled = true;
+        rbtnSumar.Enabled = true;
+        rbtnSumar.Checked = true;
+        btnCalcular.Enabled = true;
+
       }
     }
     // !Logica y funcionalidades del programa
@@ -180,7 +168,7 @@ namespace DivisionEntreNumeros
     }
     private void ManejoRButtoms()
     {
-      try  // el comando try --> tratará de realizar la acción solicitada (esto es una trampa de errores)
+      try
       {
         float v01 = float.Parse(txtV01.Text);
         float v02 = float.Parse(txtV02.Text);
