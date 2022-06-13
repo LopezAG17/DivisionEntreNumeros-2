@@ -48,7 +48,6 @@ namespace DivisionEntreNumeros
     {
       ManejoCombobox();
     }
-    // ------------------------------------------------------------------------
     private void txtV01_KeyPress(object sender, KeyPressEventArgs e)
     {
       teclEnter(e);
@@ -75,8 +74,6 @@ namespace DivisionEntreNumeros
     }
     private void rbtnDividir_CheckedChanged(object sender, EventArgs e)
     {
-      // aqui debajo coloca el codigo para cambiar el text a los labels (label1 / label2)
-      // según el radiobutton
       label1.Text = "Dividendo";
       label2.Text = "Divisor";
     }
@@ -163,7 +160,7 @@ namespace DivisionEntreNumeros
       }
       catch (Exception)
       {
-        // MessageBox.Show("Tengo Un Error : " + error.Message);  // de haber error aparece una caja de mensajes
+        // mostar nada para la exepcion de el switch
       }
     }
     private void ManejoRButtoms()
