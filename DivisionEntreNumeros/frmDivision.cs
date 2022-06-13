@@ -59,38 +59,16 @@ namespace DivisionEntreNumeros
     // ------------------------------------------------------------------------
     private void txtV01_KeyPress(object sender, KeyPressEventArgs e)
     {
-      if ((int)e.KeyChar == (int)Keys.Enter)  // verifica si presionaste la tecla enter
-      {
-        e.Handled = true;
-        if (txtV01.Text.Trim() != string.Empty)  // aqui verifica si esta vacio el textbox --> trim() elimina los espacios vacio dentro del textbox
-        {
-          txtV02.Focus(); // coloca el focus o cursor en el siguiente textbox
-        }
-      }
-      if (Char.IsLetter(e.KeyChar)) // Solo permitir numeros en el texto            
-      {
-        e.Handled = true;
-        MessageBox.Show("Solo numeros");
-      }
-      KeyPreview = true;
+      teclEnter(e);
+      soloNumeros(e);
     }
+
     private void txtV02_KeyPress(object sender, KeyPressEventArgs e)
     {
-      if ((int)e.KeyChar == (int)Keys.Enter)  // verifica si presionaste la tecla enter
-      {
-        e.Handled = true;
-        if (txtV02.Text.Trim() != string.Empty)  // aqui verifica si esta vacio el textbox --> trim() elimina los espacios vacio dentro del textbox
-        {
-          btnCalcular.PerformClick(); // performClick se dirige hacia el evento click del boton y ejecuta el codigo
-        }
-      }
-      if (Char.IsLetter(e.KeyChar)) // Solo permitir numeros en el texto            
-      {
-        e.Handled = true;
-        MessageBox.Show("Solo numeros");
-      }
-      KeyPreview = true;
+      teclEnter(e);
+      soloNumeros(e);
     }
+
     private void btnCalcular_Click(object sender, EventArgs e)
     {
       ManejoRButtoms();
@@ -251,6 +229,26 @@ namespace DivisionEntreNumeros
       rbtnSumar.Checked = true; // se vera marcado el radio button
       lblResultado.Text = ""; // limpiar este label
       txtV01.Focus();  // Focus --> El puntero del mouse se coloca en este textbox
+    }
+    private void soloNumeros(KeyPressEventArgs e)
+    {
+      if (Char.IsLetter(e.KeyChar)) // Solo permitir numeros en el texto            
+      {
+        e.Handled = true;
+        MessageBox.Show("Solo numeros");
+      }
+      KeyPreview = true;
+    }
+    private void teclEnter(KeyPressEventArgs e)
+    {
+      if ((int)e.KeyChar == (int)Keys.Enter)  // verifica si presionaste la tecla enter
+      {
+        e.Handled = true;
+        if (txtV01.Text.Trim() != string.Empty)  // aqui verifica si esta vacio el textbox --> trim() elimina los espacios vacio dentro del textbox
+        {
+          txtV02.Focus(); // coloca el focus o cursor en el siguiente textbox
+        }
+      }
     }
   }
 }
