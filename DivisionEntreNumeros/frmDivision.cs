@@ -99,8 +99,6 @@ namespace DivisionEntreNumeros
     {
       Limpiar();
     }
-
-
     private void button1_Click(object sender, EventArgs e)
     {
       this.Close();   // cierra la aplicación
@@ -144,6 +142,7 @@ namespace DivisionEntreNumeros
         rbtnPorciento.Enabled = true;
         rbtnSumar.Enabled = true;
         rbtnSumar.Checked = true;
+        btnCalcular.Enabled = false;
       }
       else
       {
@@ -168,8 +167,6 @@ namespace DivisionEntreNumeros
       {
         float mV1 = float.Parse(txtV01.Text);
         float mV2 = float.Parse(txtV02.Text);
-
-
         switch (nSeleccion)
         {
           case 0:
@@ -255,6 +252,5 @@ namespace DivisionEntreNumeros
       lblResultado.Text = ""; // limpiar este label
       txtV01.Focus();  // Focus --> El puntero del mouse se coloca en este textbox
     }
-
   }
 }
